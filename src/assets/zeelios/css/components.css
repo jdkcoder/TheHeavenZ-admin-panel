@@ -1,0 +1,148 @@
+/* import colors */
+@import url("./colors.css");
+
+:root {
+    /* Light Theme */
+    --background-color: var(--gray-10);
+    --text-color: var(--dark-gray-100);
+    --text-color-secondary: var(--dark-gray-60);
+    --primary-color: var(--purple-80);
+    --secondary-color: var(--blue-60);
+    --info-color: var(--blue-40);
+    --danger-color: var(--danger);
+    --input-background-color: var(--light-white-100);
+    --input-text-color: var(--black-100);
+    --input-border-color: var(--gray-20);
+    --input-placeholder-color: var(--gray-100);
+    --select-background-color: var(--light-white-100);
+    --select-text-color: var(--dark-gray-100);
+    --select-border-color: var(--gray-40);
+    --tooltip-background-color: var(--purple-800);
+    --tooltip-text-color: var(--light-white-100);
+
+    /* Dark Theme*/
+    --dark-background-color: var(--dark-black-100);
+    --dark-text-color: var(--black-60);
+    --dark-primary-color: var(--purple-80);
+    --dark-secondary-color: var(--blue-60);
+    --dark-input-background-color: var(--dark-gray-100);
+    --dark-input-border-color: var(--eigengrau-100);
+    --dark-input-text-color: var(--light-white-100);
+    --dark-input-placeholder-color: var(--eigengrau-80);
+    --dark-select-background-color: var(--dark-gray-100);
+    --dark-select-text-color: var(--dark-gray-10);
+    --dark-tooltip-background-color: var(--purple-80);
+    --dark-tooltip-text-color: var(--light-white-100);
+}
+
+/* Dynamic Theme */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    padding: 10px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+    background-color: var(--input-background-color);
+    color: var(--input-text-color);
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+}
+
+select {
+    padding: 10px;
+    border: 1px solid var(--select-border-color);
+    border-radius: 4px;
+    background-color: var(--select-background-color);
+    color: var(--select-text-color);
+}
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip-content {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--tooltip-background-color);
+    color: var(--tooltip-text-color);
+    padding: 5px;
+    border-radius: 4px;
+    white-space: nowrap;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-content {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Dark Theme */
+.theme-dark {
+    --background-color: var(--dark-background-color);
+    --text-color: var(--dark-text-color);
+    --primary-color: var(--dark-primary-color);
+    --button-hover-color: var(--dark-button-hover-color);
+    --input-background-color: var(--dark-input-background-color);
+    --input-text-color: var(--dark-input-text-color);
+    --input-border-color: var(--dark-input-border-color);
+    --select-background-color: var(--dark-select-background-color);
+    --select-text-color: var(--dark-select-text-color);
+    --select-border-color: var(--dark-select-border-color);
+    --tooltip-background-color: var(--dark-tooltip-background-color);
+    --tooltip-text-color: var(--dark-tooltip-text-color);
+}
+
+.theme-dark body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.theme-dark input[type="text"],
+.theme-dark input[type="email"],
+.theme-dark input[type="password"],
+.theme-dark textarea {
+    background-color: var(--input-background-color);
+    color: var(--input-text-color);
+    border-color: var(--input-border-color);
+}
+
+.theme-dark button {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.theme-dark button:hover {
+    background-color: var(--button-hover-color);
+}
+
+.theme-dark select {
+    background-color: var(--select-background-color);
+    color: var(--select-text-color);
+    border-color: var(--select-border-color);
+}
+
+.theme-dark .tooltip-content {
+    background-color: var(--tooltip-background-color);
+    color: var(--tooltip-text-color);
+}

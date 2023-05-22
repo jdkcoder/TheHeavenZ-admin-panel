@@ -1,0 +1,128 @@
+.z-input
+    --radius: 6px
+    --main-clr: var(--purple-80)
+    border-radius: var(--radius)
+    position: relative
+    &.capitalize
+        input
+            text-transform: capitalize
+
+    &.invalid
+        --main-clr: var(--danger)
+        --hint-clr: var(--main-clr)
+        --box-shadow: 0 0 0 2px var(--main-clr)
+        --stroke: var(--main-clr)
+        --label-clr: var(--main-clr)
+
+    &.disabled
+        --label-left: .25rem
+        --label-top: 0
+        --label-y: calc(-100% - .25rem)
+        --label-txt-size: .875rem
+        margin: 2rem 0
+        cursor: not-allowed
+
+        input
+            pointer-events: none
+            user-select: all
+
+    &:not(&.invalid).floating-label
+        --box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.5)
+
+    &:not(&.disabled).floating-label
+        --input-bg: transparent
+
+        input
+            &:hover, &:focus, &:not(:placeholder-shown)
+                --box-shadow: 0 0 0 1.5px var(--main-clr)
+
+            &:not(:placeholder-shown) ~ label, &:focus ~ label
+                transition: all .25s ease-in-out
+                --label-bg: var(--color-background)
+                --label-top: 0
+                --label-left: 1rem
+                --label-y: -50% - 1.5px
+                --label-txt-size: .75rem
+                --label-clr: var(--main-clr)
+
+            &:focus ~ svg, &:not(:placeholder-shown) ~ svg
+                --stroke: var(--main-clr)
+
+    &.floating-label
+        margin: 2rem 0
+
+    &:not(&.disabled).normal
+        --label-left: 2.5px
+
+        input
+            &:hover,
+            &:focus
+                --box-shadow: 0 0 0 1.5px var(--main-clr)
+
+            &:focus ~ label
+                --label-opacity: 0.5
+
+            &:not(:placeholder-shown) ~  label
+                --label-opacity: 0
+
+    input
+        border-radius: inherit
+        background: var(--input-bg, #374151)
+        padding: .75rem 1rem
+        outline: none
+        border: none
+        color: #fff
+        width: 100%
+        box-shadow: var(--box-shadow)
+        transition: all .25s ease-in-out
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button
+            -webkit-appearance: none
+            margin: 0
+
+        &[type=number]
+            -moz-appearance: textfield
+
+        &[type="search"]
+            padding: .75rem 3rem
+
+            & ~ label
+                --label-left: 2.125rem
+
+            &::-webkit-search-decoration,
+            &::-webkit-search-cancel-button,
+            &::-webkit-search-results-button,
+            &::-webkit-search-results-decoration
+                -webkit-appearance: none
+
+    label
+        position: absolute
+        left: var(--label-left, 0)
+        top: var(--label-top, 50%)
+        transform: translateY(calc(var(--label-y, calc(-50% - 1px))))
+        color: var(--label-clr, rgba(255, 255, 255, 0.5))
+        background: var(--label-bg, transparent)
+        pointer-events: none
+        z-index: 1
+        opacity: var(--label-opacity, 1)
+        padding: 0 .75rem
+        border-radius: 4px
+        font-size: var(--label-txt-size, 1rem)
+        transition: all .25s ease-in-out
+
+    .search-icon
+        --s: 1.25rem
+        height: var(--s)
+        width: auto
+        position: absolute
+        left: 1rem
+        top: 50%
+        transform: translateY(-50%)
+        z-index: 2
+        stroke: var(--stroke, rgba(255, 255, 255, 0.5))
+
+    small
+        color: var(--hint-clr)
+        margin-top: 2px
+        padding: 0 1rem

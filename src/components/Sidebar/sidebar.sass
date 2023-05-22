@@ -1,0 +1,160 @@
+aside
+    min-height: 100vh
+    width: var(--sidebar-w)
+
+    svg
+        position: relative
+        z-index: 1
+        transition: all .25s ease-in-out
+
+        &.stroke
+            stroke-width: 1.5px
+            stroke-linecap: round
+            stroke-linejoin: round
+
+        &.fill
+            fill: #fff
+
+    #sidebar-content
+        position: fixed
+        height: max-content
+        background: #1f2937
+        min-height: 100vh
+        width: var(--sidebar-w)
+        box-shadow: 0 0 0 1px rgba(55, 65, 81, 1)
+
+        .router-link-active
+            color: #fff
+            background: var(--purple-80)
+
+            &:hover
+                background: var(--purple-80)!important
+
+        #header
+            display: flex
+            align-items: center
+            padding: .75rem 1rem
+            position: relative
+
+            &::after
+                content: ""
+                background: linear-gradient(to right, transparent, var(--purple-80), transparent)
+                width: 100%
+                height: 1px
+                position: absolute
+                bottom: 0
+                left: 50%
+                transform: translateX(-50%)
+
+            #elastic-btn
+                --s: 48px
+                display: grid
+                place-items: center
+                border-radius: 100%
+                height: var(--s)
+                width: var(--s)
+                margin-right: 1rem
+                position: relative
+
+                &::after
+                    content: ""
+                    position: absolute
+                    inset: 0
+                    border-radius: inherit
+                    background: var(--purple-100)
+                    z-index: -1
+                    opacity: var(--elastic-btn-bg-o, 0)
+                    transition: all .25s ease-in-out
+
+                svg
+                    height: 1.125rem
+                    stroke: var(--purple-60)
+
+                &:hover
+                    --svg-clr: #fff
+                    --elastic-btn-bg-o: .2
+
+            #logo
+                text-transform: uppercase
+                font-weight: 700
+                font-size: 1.5rem
+                color: #fff
+                background: transparent!important
+
+        #nav-list
+            padding: 1.5rem .5rem
+
+            .nav-group
+                overflow: hidden
+                display: grid
+                grid-template-rows: 1.875rem 0fr
+                transition: all .4s ease-in-out
+                --arrow-rotate: -90deg
+
+                &.active
+                    --arrow-rotate: 90deg
+                    --arrow-clr: var(--purple-80)
+                    grid-template-rows: 1.875rem 1fr
+
+                    .group-title
+                        color: var(--purple-80)!important
+
+                .nav-group-inner
+                    overflow: hidden
+
+                .group-title
+                    font-weight: 600
+                    font-size: .875rem
+                    color: #fff
+                    padding: 0 1rem 0 1rem
+                    margin-bottom: .5rem
+                    width: 100%
+                    text-align: left
+                    position: relative
+                    transition: all .4s ease-in-out
+
+                    &:hover
+                        transition: .25s ease-in-out
+                        --arrow-clr: var(--purple-100)
+                        --nav-group-title-clr: var(--purple-100)
+
+                    &::after
+                        content: "›"
+                        position: absolute
+                        right: .5rem
+                        top: 50%
+                        font-size: 1.125rem
+                        transition: transform .25s ease-in-out, color .4s ease-in-out
+                        color: var(--arrow-clr, #fff)
+                        transform: translateY(-50%) rotate(var(--arrow-rotate))
+
+            .nav-item
+                padding: .5rem 1rem
+                display: grid
+                grid-template-columns: min-content 1fr
+                overflow: hidden
+                border-radius: .5rem
+                transition: all .25s ease-in-out
+
+                &:not(&.router-link-active)
+                    color: #fff
+
+                &:hover
+                    background: rgba(55, 65, 81, 1)
+
+                .nav-icon
+                    display: grid
+                    place-items: center
+                    padding-right: 1rem
+                    height: 100%
+                    width: 2rem
+
+                    svg
+                        height: 1.125rem
+                        stroke: #fff
+
+                span
+                    display: grid
+                    align-items: center
+                    font-weight: 600
+                    text-transform: capitalize

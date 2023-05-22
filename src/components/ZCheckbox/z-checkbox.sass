@@ -1,0 +1,63 @@
+.z-checkbox
+    --main-clr: var(--purple-80)
+    display: flex
+    align-items: center
+    cursor: pointer
+    padding-left: 3px
+
+    &:hover
+        --box-shadow: 0 0 0 2px var(--main-clr)
+        --label-clr: var(--main-clr)
+
+    & > *
+        pointer-events: none
+
+    &.disabled
+        pointer-events: none
+        filter: brightness(.75)
+
+    &.invalid
+        --main-clr: var(--danger)
+        --label-clr: var(--main-clr)
+        --box-shadow: 0 0 0 2px var(--main-clr)
+
+    .label
+        color: var(--label-clr, #fff)
+        cursor: pointer
+
+    input
+        display: none
+
+        &:checked ~ .label
+            --label-clr: var(--main-clr)
+
+        &:checked ~ .z-square
+            transition: all .25s ease-in-out
+            --scale: 1
+            --square-bg: var(--main-clr)
+            --box-shadow: 0 0 0 2px var(--main-clr)
+
+            &::after
+                transition: all .25s ease-in-out .1s
+
+    .z-square
+        --s: 1.125rem
+        height: var(--s)
+        width: var(--s)
+        box-shadow: var(--box-shadow, 0 0 0 2px rgba(255, 255, 255, .5))
+        border-radius: .25rem
+        position: relative
+        background: var(--square-bg, transparent)
+        transition: all .25s ease-in-out .05s
+
+        &::after
+            content: "✔"
+            position: absolute
+            top: 50%
+            left: 50%
+            color: #fff
+            transition: all .25s ease-in-out
+            transform: translate(-50%, calc(-50% - 0.5px)) scale(var(--scale, 0))
+
+    &> * + * + *
+        margin-left: .5rem

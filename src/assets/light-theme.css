@@ -1,0 +1,21 @@
+@import './zeelios/css/colors.css';
+
+::root {
+  /* Light Theme */
+  --background-color: var(--gray-10);
+  --text-color: var(--dark-gray-100);
+  --text-color-secondary: var(--dark-gray-60);
+  --primary-color: var(--purple-80);
+  --secondary-color: var(--blue-60);
+  --info-color: var(--blue-40);
+  --danger-color: var(--danger);
+  --input-background-color: var(--light-white-100);
+  --input-text-color: var(--black-100);
+  --input-border-color: var(--gray-20);
+  --input-placeholder-color: var(--gray-100);
+  --select-background-color: var(--light-white-100);
+  --select-text-color: var(--dark-gray-100);
+  --select-border-color: var(--gray-40);
+  --tooltip-background-color: var(--purple-800);
+  --tooltip-text-color: var(--light-white-100);
+}

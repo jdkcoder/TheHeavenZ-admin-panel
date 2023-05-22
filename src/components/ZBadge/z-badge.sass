@@ -1,0 +1,28 @@
+.z-badge
+    border-radius: 100vmax
+    font-weight: 500
+    font-size: .875rem
+    line-height: 1.25rem
+    padding: .125rem .75rem
+    display: grid
+    place-items: center
+    background: var(--badge-bg, rgba(107, 114, 128, 0.2))
+    color: var(--text-clr, #d1d5db)
+
+    &.capitalize
+        text-transform: capitalize
+    
+    &.nowrap
+        white-space: nowrap
+
+    &[mode="success"]
+        --badge-bg: rgba(46, 213, 115, .1)
+        --text-clr: var(--success)
+
+    &[mode="danger"]
+        --badge-bg: rgba(234, 93, 93, .1)
+        --text-clr: var(--danger)
+
+    &[mode="warning"]
+        --badge-bg: rgba(255, 188, 31, .1)
+        --text-clr: var(--warning)

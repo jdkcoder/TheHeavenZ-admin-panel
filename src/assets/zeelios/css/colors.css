@@ -1,0 +1,114 @@
+:root {
+  /* Purple */
+  --purple-100: #7b61ff;
+  --purple-80: #9581ff;
+  --purple-60: #b0a0ff;
+  --purple-40: #cab0ff;
+  --purple-20: #e5dfff;
+  --purple-10: #f2efff;
+  --purple-5: #f8f7ff;
+
+  /* Blue */
+  --blue-100: #31b0d8;
+  --blue-80: #5bc0df;
+  --blue-60: #84d0e7;
+  --blue-40: #b6deed;
+  --blue-20: #d6eff7;
+  --blue-10: #eaf7fb;
+  --blue-5: #f5fbfd;
+
+  /* Gray */
+  --gray-100: #b8b5c3;
+  --gray-80: #c6c4cf;
+  --gray-60: #d4d3db;
+  --gray-40: #e3e1e7;
+  --gray-20: #f1f0f3;
+  --gray-10: #f8f8f9;
+  --gray-5: #fbfbfc;
+
+  /* Dark Gray */
+  --dark-gray-100: #1c1c25;
+  --dark-gray-80: #494951;
+  --dark-gray-60: #77777c;
+  --dark-gray-40: #a4a4a8;
+  --dark-gray-20: #d2d2d3;
+  --dark-gray-10: #e8e8e9;
+  --dark-gray-5: #f4f4f4;
+
+  /* Eigengrau */
+  --eigengrau-100: #272733;
+  --eigengrau-80: #52525c;
+  --eigengrau-60: #7d7d85;
+  --eigengrau-40: #a9a9ad;
+  --eigengrau-20: #d4d4d6;
+  --eigengrau-10: #e9e9eb;
+  --eigengrau-5: #f4f4f5;
+
+  /* Black */
+  --black-100: #000000;
+  --black-80: #333333;
+  --black-60: #666666;
+  --black-40: #999999;
+  --black-20: #cccccc;
+  --black-10: #e6e6e6;
+  --black-5: #f2f2f2;
+
+  /* Deep Black */
+  --deep-black-100: #101015;
+  --deep-black-80: #404044;
+  --deep-black-60: #707073;
+  --deep-black-40: #9f9fa1;
+  --deep-black-20: #cfcfd0;
+  --deep-black-10: #e7e7e8;
+  --deep-black-5: #f3f3f3;
+
+  /* Red */
+  --red-100: #da655e;
+  --red-80: #e0837e;
+  --red-60: #e7a19e;
+  --red-40: #efbfbe;
+  --red-20: #f6dfde;
+  --red-10: #fbefef;
+  --red-5: #fdf7f7;
+
+  /* Green */
+  --green-100: #69d07d;
+  --green-80: #7ed896;
+  --green-60: #9ae2b0;
+  --green-40: #b9ebca;
+  --green-20: #dbf5e4;
+  --green-10: #edfaf2;
+  --green-5: #f6fdf8;
+
+  /* Yellow */
+  --yellow-100: #f7bf45;
+  --yellow-80: #f8cb61;
+  --yellow-60: #fad886;
+  --yellow-40: #fce4ad;
+  --yellow-20: #fdf2d6;
+  --yellow-10: #fefaf3;
+  --yellow-5: #fffcf5;
+
+  /* Status */
+  --success: rgb(46, 214, 116);
+  --warning: rgb(255, 188, 31);
+  --danger: rgb(234, 93, 93);
+
+  /* Dark Black */
+  --dark-black-100: #16161d;
+  --dark-black-80: #45454b;
+  --dark-black-60: #737378;
+  --dark-black-40: #a2a2a5;
+  --dark-black-20: #d0d0d2;
+  --dark-black-10: #e8e8e9;
+  --dark-black-5: #f3f3f4;
+
+  /* Light White */
+  --light-white-100: #ffffff;
+  --light-white-80: #cccccc;
+  --light-white-60: #999999;
+  --light-white-40: #666666;
+  --light-white-20: #333333;
+  --light-white-10: #191919;
+  --light-white-5: #0d0d0d;
+}

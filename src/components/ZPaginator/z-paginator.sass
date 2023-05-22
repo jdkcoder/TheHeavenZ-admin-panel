@@ -1,0 +1,75 @@
+.z-paginator, .arrows
+    display: grid
+    grid-auto-flow: column
+    grid-auto-columns: max-content
+
+.z-paginator
+    border-radius: .25rem
+    user-select: none
+    width: max-content
+
+    & > button
+        color: #fff
+        width: 1.75rem
+        height: 1.75rem
+        display: grid
+        place-items: center
+        background: var(--btn-bg, transparent)
+        position: relative
+        border-radius: .25rem
+        transition: all .25s ease-in-out
+
+        &:first-child
+            border-top-left-radius: .25rem
+            border-bottom-left-radius: .25rem
+
+        &:not(:first-child)::before
+            content: ''
+            display: block
+            width: 1px
+            height: 40%
+            background: rgba(55, 65, 81, 1)
+            position: absolute
+            left: 0
+            top: 50%
+            transform: translateY(-50%)
+
+        &:hover
+            --btn-bg: #2a3442
+
+        &.active
+            z-index: 2
+            color: var(--purple-60)
+            font-weight: 600
+            box-shadow: 0 0 0 1.5px var(--purple-80)
+
+    .arrows
+
+        svg
+            height: .625rem
+            fill: var(--purple-60)
+
+        & >*
+            color: #fff
+            width: 1.75rem
+            display: grid
+            place-items: center
+            background: var(--btn-bg, transparent)
+            position: relative
+            border-radius: .25rem
+            transition: all .25s ease-in-out
+            cursor: pointer
+
+            &:hover
+                --btn-bg: #2a3442
+
+            &:not(:first-child)::before
+                content: ''
+                display: block
+                width: 1px
+                height: 40%
+                background: rgba(55, 65, 81, 1)
+                position: absolute
+                left: 0
+                top: 50%
+                transform: translateY(-50%)

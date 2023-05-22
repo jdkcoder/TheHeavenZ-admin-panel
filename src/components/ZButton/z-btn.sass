@@ -1,0 +1,63 @@
+.z-btn
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: .5rem 1.5rem
+    min-height: 2.5rem
+    background: var(--purple-80)
+    color: #fff
+    font-weight: var(--fw, inherit)
+    border-radius: .375rem
+    width: 100%
+    outline: none
+    transition: .25s ease-in-out
+    position: relative
+
+    &::before, &::after
+        content: ""
+        position: absolute
+
+    &::after
+        --s: calc(100% + .5rem)
+        width: var(--s)
+        height: var(--s)
+        top: 50%
+        left: 50%
+        border-radius: inherit
+        box-shadow: 0 0 0 2px var(--purple-100)
+        z-index: -1
+        opacity: var(--focus-opacity, 0)
+        transition: all .4s ease-in-out
+        transform: translate(-50%, -50%) scale(var(--scale-focus, 0))
+
+    &:hover
+        background: var(--purple-100)
+
+    &:focus
+        --focus-opacity: 1
+        --scale-focus: 1
+        background: var(--purple-100)
+
+    &.link, &.text-only
+        color: var(--purple-80)
+        background: transparent
+
+    &.link:hover
+        text-decoration: underline
+
+    &.outline
+        background: transparent
+        box-shadow: 0 0 0 1px var(--purple-80)
+        color: var(--purple-80)
+
+    &.rounded
+        border-radius: 100vmax
+
+    &:disabled
+        filter: brightness(.8)
+
+    span
+        font-weight: inherit
+
+    .loading-icon.active
+        margin-right: .75rem

@@ -1,0 +1,32 @@
+#date-time
+    position: relative
+    width: 100%
+    margin-left: 1rem
+    overflow: hidden
+    display: flex
+    flex-flow: column
+    justify-content: center
+    color: #fff
+
+    #clock-icon
+        position: absolute
+        bottom: 0
+        right: 0
+        transform: translate(25%, 25%)
+        height: 4rem
+        fill: #87898e
+
+    #date
+        &:hover
+            color: var(--purple-60)
+
+    #time
+        margin-top: .25rem
+
+        &:hover
+            color: var(--purple-60)
+
+        &::before
+            content: "Current Time - "
+            color: #a4a4a6
+            pointer-events: none

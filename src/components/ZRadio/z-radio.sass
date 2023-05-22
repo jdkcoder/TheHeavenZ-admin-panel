@@ -1,0 +1,67 @@
+.z-radio
+    --main-clr: var(--purple-80)
+    display: flex
+    align-items: center
+    cursor: pointer
+
+    & > *
+        pointer-events: none
+
+    &.disabled
+        pointer-events: none
+        filter: brightness(.75)
+
+    &.invalid
+        --main-clr: var(--danger)
+        --label-clr: var(--main-clr)
+        --box-shadow: 0 0 0 2px var(--main-clr)
+
+    &:hover
+        --box-shadow: 0 0 0 2px var(--main-clr)
+        --label-clr: var(--main-clr)
+
+    .label
+        color: var(--label-clr, #fff)
+        cursor: pointer
+
+    input
+        display: none
+
+        &:checked ~ .label
+            --label-clr: var(--main-clr)
+
+        &:checked ~ .z-circle
+            transition: all .6s ease-in-out
+            --box-shadow: 0 0 0 2px var(--main-clr), inset 0 0 0 4px var(--border-clr, var(--main-clr))
+            --scale: 1
+
+            &::after
+                transition: all .6s ease-in-out
+
+    .z-circle
+        --s: 1rem
+        height: var(--s)
+        width: var(--s)
+        box-shadow: var(--box-shadow, 0 0 0 2px rgba(255, 255, 255, .5))
+        background: var(--circle-bg, transparent)
+        border-radius: 100%
+        position: relative
+        overflow: hidden
+        transition: all .25s ease-in-out
+
+        &::after
+            --s: .5rem
+            content: ""
+            position: absolute
+            top: 50%
+            left: 50%
+            width: var(--s)
+            height: var(--s)
+            border-radius: inherit
+            z-index: 1
+            box-shadow: 0 0 0 2rem var(--main-clr)
+            transition: all .25s ease-in-out
+            transform: translate(-50%, -50%) scale(var(--scale, 0))
+
+    &> * + *
+        margin-left: .5rem

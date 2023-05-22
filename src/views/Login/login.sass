@@ -1,0 +1,56 @@
+#login-page
+    min-height: 100vh
+    max-width: 100vmax
+    width: 100%
+    height: 100%
+    display: grid
+    place-items: center
+    position: relative
+
+    &::before
+        content: ""
+        width: 50%
+        height: 70vh
+        background: var(--purple-100)
+        position: absolute
+        top: 0
+        left: 50%
+        transform: translate(-50%, -50%)
+        border-radius: 50%
+        filter: blur(200px) brightness(.75)
+
+    #login-card
+        background: rgba(37, 37, 37, 0.5)
+        backdrop-filter: blur(1.5rem)
+        border-width: 1px
+        border-color: #a1a1a1
+        border-radius: 1rem
+        box-shadow: 0 25px 20px -12px rgba(0,0,0,.25)
+        padding: 2rem
+        position: relative
+        min-width: 400px
+
+        &::before
+            content: ""
+            background: linear-gradient(to right, transparent, var(--purple-80), transparent)
+            position: absolute
+            top: 0
+            left: 50%
+            transform: translate(-50%, 0%)
+            width: 95%
+            height: 1px
+
+        h2
+            letter-spacing: -.025em
+            font-weight: 700
+            font-size: 1.5rem
+            line-height: 2rem
+            text-align: center
+            color: #fff
+            user-select: none
+
+        #login-form
+            margin-top: 2rem
+
+            & > * + *
+                margin-top: 1.625rem

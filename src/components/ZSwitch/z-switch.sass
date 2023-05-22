@@ -1,0 +1,54 @@
+.z-switch-wrapper
+    display: flex
+    align-items: center
+
+    & > * + *
+        margin-left: .75rem
+
+    .chosen
+        transition: all .4s ease-in-out
+        color: var(--purple-80)
+
+    &:hover
+        --border-clr: var(--purple-80)
+
+.z-switch
+    box-shadow: 0 0 0 2px var(--border-clr, transparent)
+    position: relative
+    display: inline-block
+    width: 44px
+    height: 24px
+    cursor: pointer
+    transition: all .25s ease-in-out
+    border-radius: 100vmax
+    overflow: hidden
+
+    & > *
+        pointer-events: none
+
+    &.active
+        --border-clr: transparent
+        --switch-bg: var(--purple-80)
+        --x: 1.0625rem
+
+    .z-checkbox
+        display: none
+
+    span
+        position: absolute
+        inset: 0
+        background: var(--switch-bg, #363f4b)
+        transition: .4s all ease-in-out
+
+        &::before
+            --s: 1.125rem
+            content: ""
+            position: absolute
+            left: .25rem
+            top: 50%
+            height: var(--s)
+            width: var(--s)
+            transform: translate(var(--x, 0), -50%)
+            border-radius: 50%
+            background-color: white
+            transition: all .4s ease-in-out

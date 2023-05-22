@@ -1,0 +1,58 @@
+dialog
+    display: grid
+    grid-auto-rows: max-content
+    background: #1f2937
+    overflow: hidden
+    margin: auto
+    position: fixed
+    padding: 0
+    inset: 0
+    z-index: 1000
+    border-radius: .75rem
+    width: 100%
+    height: 100%
+    color: #fff!important
+    border: none
+    outline: none
+    transform: translateY(100%)
+    pointer-events: none
+    box-shadow: 0 0 0 1.5px rgba(75, 85, 99, 1)
+    transition: all .4s ease-in-out
+
+    @media (min-width: 1280px)
+        width: 50vw
+        height: 50vh
+
+    &[open]
+        pointer-events: auto
+        transform: translateY(0) scale(1)
+
+    &[inert]
+        transform: translateY(0) scale(0)
+
+        &:not([open])
+            transform: translateY(0) scale(0)
+
+    &::backdrop
+        backdrop-filter: blur(20px)
+
+    &:not([open])
+        opacity: 0
+
+    .modal-header
+        background: #111828
+        padding: 1rem 1.5rem
+        font-size: 1.25rem
+        text-transform: uppercase
+        font-weight: 600
+
+    .modal-actions
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        gap: 1.5rem
+        padding: 1rem 0
+        justify-content: center
+
+    .modal-content
+        padding: 1.5rem
