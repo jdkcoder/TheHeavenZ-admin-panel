@@ -24,10 +24,10 @@
         <div class="z-column-names" v-if='!$slots[`header`]'>
             <div class="th-cell" v-if='$slots[`checkboxRow`]'></div>
             <div class="th-cell" v-for="(column, index) in (props.columns || columns)" :key="index">
-                <span v-if='$slots[`${column}Header`]'>
+                <span v-if='$slots[`${column}Header`]'> <!-- slot #columnHeader activated => change the header name-->
                     <slot :name="`${column}Header`" />
                 </span>
-                <span v-if='!$slots[`${column}Header`]'>{{ column }}</span>
+                <span v-if='!$slots[`${column}Header`]'>{{ column }}</span><!-- slot #columnHeader unactivated => not change the header name-->
             </div>
             <div class="th-cell" v-if='$slots[`rowActions`]'>
                 <span>Actions</span>
@@ -40,7 +40,7 @@
 
 
         <!-- TABLE DATA -->
-        <slot name="row" v-bind="props.data"/>
+        <slot name="row" v-bind="props.data" />
         <div v-if='!$slots.row' class="table-row" :class="props.rowClass" v-for="(item, index) in props.data" :key="index">
             <div class="td-cell" v-if='$slots[`checkboxRow`]'>
                 <slot name="checkboxRow" v-bind="item" />

@@ -1,10 +1,10 @@
 {
-  "name": "z-panel2",
+  "name": "z-panel",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --port=4000",
+    "dev": "vite --port=4001",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },
@@ -15,7 +15,9 @@
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "dropbox": "^10.34.0",
+    "js-cookie": "^3.0.5",
     "moment": "2.29.4",
+    "radash": "^10.8.1",
     "resumablejs": "1.1.0",
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
@@ -24,6 +26,7 @@
     "vue-router": "^4.2.0"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.3",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue-macros/volar": "0.9.8",
     "typescript": "^5.0.4",

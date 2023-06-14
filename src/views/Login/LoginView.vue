@@ -6,7 +6,7 @@
                 <ZInput v-model="username" type="text" label="Username" tabindex="1" @keyup.enter="enterToLogin" />
                 <ZInput v-model="password" type="password" label="Password" tabindex="2" @keyup.enter="enterToLogin" />
                 <ZCheckbox v-model="isRememberMe" boolean label="Remember me" tabindex="3" />
-                <ZButton loading label="Login" @click.prevent="login" id="login-btn" tabindex="4" />
+                <ZButton loading label="Login" @click.prevent="login(username, password)" id="login-btn" tabindex="4" />
             </div>
         </div>
     </section>
@@ -15,7 +15,8 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import axios from 'axios'
+import login from '../../ults/auth/login';
+
 const username = ref<string>('jdk');
 const password = ref<string>('password');
 const isRememberMe = ref<boolean>(false)
@@ -30,18 +31,7 @@ async function enterToLogin(e: KeyboardEvent) {
     else alert('Please fill in the username and password')
 }
 
-async function login() {
-    await axios.post('http://localhost/oauth/token', {
-        client_secret: '6XQooY0HBIQIZlS87DmmDl3RzGlQg7GnpO6EvmiD',
-        client_id: 2,
-        username: username.value,
-        password: password.value,
-        grant_type: 'password'
-        // isRememberMe: isRememberMe.value
-    }).then(res => {
-        console.log(res.data)
-    })
-}
+
 </script>
 
 <style lang="sass?intendedSyntax">

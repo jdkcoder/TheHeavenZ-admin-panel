@@ -6,7 +6,7 @@
 
 <script setup lang='ts'>
 import {ref} from 'vue'
-const props = defineProps<{border: boolean}>()
+const props = defineProps<{border?: boolean}>()
 const classes = ref({
     'border': props.border
 })

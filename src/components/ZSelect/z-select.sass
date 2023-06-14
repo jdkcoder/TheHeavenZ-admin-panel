@@ -1,8 +1,42 @@
 .z-select
     position: relative
-    
+   
+    .input-field
+        cursor: pointer
+        border: none
+        outline: none
+        position: relative
+
+        background: #374151
+        outline: 1px solid  #606977
+        border-radius: 5px
+        margin: 0.5rem
+        &:focus-within
+            outline: 1px solid var(--purple-80)
+        
+        .input  
+            color: #fff
+            background: #374151
+            font-size: 16px
+            width: 80%
+            border: none
+            
+            &:focus
+                outline: none
+        
+        .find-icon
+            position: absolute
+            top: 50%
+            right: 10px
+            transform: translateY(-50%)
+            pointer-events: none
+
+    .selected-item
+        user-select: none !important
+
     .z-options
         position: absolute
+        z-index: 2
         bottom: 0
         left: 0
         transform: translateY(calc(100% + 4px))
@@ -16,13 +50,13 @@
         opacity: var(--o, 0)
         transition: all .4s ease-in-out
         pointer-events: var(--pe, none)
-
+        user-select: none
         &.active
             --o: 1
             --pe: all
-
+        
         & > *
             padding: .25rem 1rem
-
+        .z-option
             &:hover
                 background: var(--purple-80)
