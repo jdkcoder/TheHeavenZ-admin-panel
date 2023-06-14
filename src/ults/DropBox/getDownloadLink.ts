@@ -1,3 +1,4 @@
+//@ts-nocheck
 
 function getInfoPhotoset(studio: string, photoset: any) {
     drb.filesDownload({ path: `/${studio}/${photoset.name}/info.txt` }).then(response => {

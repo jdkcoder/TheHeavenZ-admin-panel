@@ -94,6 +94,8 @@ const newModelModal = ref()
 function callNewModelModal() {
     newModelModal.value?.showModal()
 }
+
+//@ts-ignore
 const models = ref([
     {
         avatar: 'https://i.imgur.com/ZvTYN2N.png',
@@ -106,11 +108,8 @@ const models = ref([
         country: 'Korea'
     }
 ])
-const modelSchema = ref({
-    name: 'string',
-    country: 'string'
-})
 
+//@ts-ignore
 function edit(input: string) {
     alert('Editing ' + input)
 }

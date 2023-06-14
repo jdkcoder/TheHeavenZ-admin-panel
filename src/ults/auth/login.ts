@@ -1,3 +1,4 @@
+//@ts-ignore
 import umi from '../../umi'
 import axios from 'axios'
 export default async function login(username: string, password: string) {

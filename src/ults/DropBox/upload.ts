@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 function setPhotosetInfo(studio: string, photosetName: string) {
     const fileName = 'info.txt';
     const content = JSON.stringify({

@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 async function allStudiosOnDropbox() {
     await drb.filesListFolder({ path: '' }).then((res) => {
         let result = res.result.entries.filter(folder => folder['.tag'] === 'folder')

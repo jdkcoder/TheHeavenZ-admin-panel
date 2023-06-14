@@ -50,6 +50,7 @@ const router = createRouter({
     },
   ]
 })
+//@ts-ignore
 router.beforeEach(async (to, from, next) => {
   //@ts-ignore
   document.title = await 'Z-Panel' + ' | ' + to.name

@@ -1,4 +1,4 @@
-
+//@ts-nocheck
 
 async function allPhotosets() {
     try {

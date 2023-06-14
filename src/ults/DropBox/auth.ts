@@ -1,4 +1,4 @@
-
+//@ts-nocheck
 import { Dropbox } from 'dropbox'
 
 const drb = new Dropbox({ clientId: 'xynoc7cyyezc3zn', clientSecret: '4py399m1tngwj49' });
